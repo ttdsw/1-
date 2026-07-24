@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Atlas>
+    <Texture filename="hx_or.tex"/>
+    <Elements>
+        <Element name="bottom_text_grid.tex" u1="0" u2="0.551181" v1="0.700787" v2="1"/>
+        <Element name="right.tex" u1="0" u2="0.496063" v1="0.19685" v2="0.692913"/>
+        <Element name="wrong.tex" u1="0.503937" u2="1" v1="0.19685" v2="0.692913"/>
+    </Elements>
+    <StraightAlpha>false</StraightAlpha>
+</Atlas>
+
