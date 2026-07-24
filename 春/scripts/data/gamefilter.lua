@@ -1,0 +1,330 @@
+local m_util = require "util/modutil"
+local isHuxi = m_util:IsHuxi()
+
+
+
+return {
+    {
+        id = "overlays",
+        prefab = "screen_tv",
+        label = "屏幕光晕",
+        hover = "屏幕四周有一圈儿\n黑糊糊的滤镜\n或者叫“景深”？ ",
+        shelter = {
+            [{"vig"}] = {"vigpaint", "vig"},   
+        },
+    },
+    {
+        id = "pauseover",
+        prefab = "missing_asset",
+        label = "暂停黑屏",
+        hover = "这原本是开发者模式的内容\n要不要显示暂停时的屏幕黑屏呢？",
+        shelter = {
+            [{"serverpause_underlay"}] = true,
+        },
+        default = not isHuxi,
+    },
+    {   id = "sandover",
+        prefab = "townportaltalisman",
+        label = "沙暴滤镜",
+        hover = "夏日绿洲的沙暴",
+        shelter = {
+            [{"sanddustover"}] = {"sand_texture2", "sand_over"},
+            [{"sandover", "bg"}] = {"gradient2", "sand_over"},
+        },
+    },
+    {   
+        id = "moonstorm",
+        prefab = "screen_moonstorm",
+        label = "月亮风暴滤镜",
+        hover = "激活天体事件后的月亮风暴",
+        shelter = {
+            [{"moonstormdust"}] = true,
+            [{"moonstormover","bg"}] = {"gradient2", "moonstorm_over"},
+        },
+    },
+    {
+        id = "wagpunkui",
+        prefab = "wagpunkhat",
+        label = "头戴齿轮滤镜",
+        hover = "头戴齿轮帽景深",
+        shelter = {
+            [{"Wagpunkui","overlay"}] = {"ui_parts", "wagpunk_over"},
+        },
+    },
+    {
+        id = "nutrientsover",
+        prefab = "nutrientsgoggleshat",
+        label = "耕作先驱帽滤镜",
+        hover = "耕作先驱帽景深",
+        shelter = {
+            [{"nutrientsover","bg"}] = true,
+        },
+    },
+    {
+        id = "gogglesover",
+        prefab = "deserthat",
+        label = "沙漠护目镜滤镜",
+        hover = "护目镜景深",
+        shelter = {
+            [{"gogglesover","bg"}] = true,
+        },
+    },
+    {
+        id = "scrapmonocleover",
+        prefab = "scrap_monoclehat",
+        label = "视界拓展器滤镜",
+        hover = "视界拓展器滤镜",
+        shelter = {
+            [{"scrapmonocleover"}] = {"ui_parts", "scrap_monocle_over"},
+        },
+    },
+    {
+        id = "inspectaclesover",
+        prefab = "inspectacleshat",
+        label = "检查专用镜滤镜",
+        hover = "检查专用镜滤镜\n【薇诺娜的装备】",
+        shelter = {
+            [{"inspectaclesover"}] = {"ui_parts", "inspectacles_over"},
+        },
+    },
+    {
+        id = "roseglasseshat",
+        prefab = "roseglasseshat",
+        label = "玫瑰色眼镜滤镜",
+        hover = "玫瑰色眼镜的滤镜\n【薇诺娜的装备】",
+        shelter = {
+            [{"roseglassesover"}] = {"ui_parts", "roseglasseshat_over"},
+        },
+    },
+    {
+        id = "fruitover",
+        prefab = "ancientfruit_nightvision",
+        label = "夜莓滤镜",
+        hover = "吃掉夜莓后的夜视滤镜",
+        shelter = {
+            [{"nightvisionfruitover"}] = {"ui_parts1", "nightvision_fruit_over"},
+            [{"nightvisionfruitover"}] = {"ui_parts2", "nightvision_fruit_over"},
+            [{"nightvisionfruitover"}] = {"ui_parts_tint", "nightvision_fruit_over"},
+        },
+        default = not isHuxi,
+    },
+    {
+        id = "outline",
+        prefab = "nightmarebeak",
+        label = "灵视血丝",
+        hover = "是否显示提示精神崩溃的血丝",
+        shelter = {
+            [{"vig"}] = {"vein01", "vig"},
+            [{"vig"}] = {"vein02", "vig"},
+            [{"vig"}] = {"vein03", "vig"},
+            [{"vig"}] = {"vein04", "vig"},
+        },
+    },
+    {
+        id = "clouds",
+        prefab = "screen_clouds",
+        label = "视野云",
+        hover = "视野拉高时的出现的白濛濛云雾",
+        shelter = {
+            [{"clouds"}] = {"cloud", "clouds_ol"},
+        },
+    },
+    {
+        id = "spray",
+        prefab = "icon_wetness",
+        label = "屏幕雨滴",
+        hover = "下雨时屏幕周围洋洋洒洒的雨滴",
+        shelter = {
+            [{"drops_vig"}] = {"water_dot_01", "paddle_over"},
+            [{"drops_vig"}] = {"water_dot_02", "paddle_over"},
+            [{"drops_vig"}] = {"water_dot_03", "paddle_over"},
+            [{"drops_vig"}] = {"water_dot_04", "paddle_over"},
+            [{"drops_vig"}] = {"water_dot_05", "paddle_over"},
+        },
+        default = true,
+    },
+    {
+        id = "miasmaclouds",
+        prefab = "cave_vent_rock",
+        label = "影后瘴气",
+        hover = "喷气孔溢出的瘴气",
+        shelter = {
+            [{"miasmaclouds"}] = {"cloud_parts", "miasma_over"},
+            [{"miasmaover", "bg"}] = {"cloud_parts", "miasma_over"},
+        },
+        default = not isHuxi,
+    },
+    {
+        id = "mindcontrolover",
+        prefab = "stalker_atrium",
+        label = "精神支配滤镜",
+        hover = "低精神时，\n远古织影者的精神控制滤镜",
+        shelter = {
+            [{"mindcontrolover"}] = {"tentacle2", "mind_control_overlay"},
+            [{"mindcontrolover"}] = {"inside ghost", "mind_control_overlay"},
+            [{"mindcontrolover"}] = {"blink", "mind_control_overlay"},
+        },
+        default = true,
+    },
+    {
+        id = "parasitethrallover",
+        prefab = "shadowthrall_parasite",
+        label = "虚空寄生滤镜",
+        hover = "群友说是被寄生面具杀死后的滤镜，\n等大伙测试",
+        shelter = {
+            [{"parasitethrallover"}] = {"ol_part", "thrall_parasite_overlay"},
+            [{"parasitethrallover"}] = {"frame", "thrall_parasite_overlay"},
+        },
+        default = true,
+    },
+    {
+        id = "batover",
+        prefab = "halloween_ornament_2",
+        label = "万圣夜蝙蝠滤镜",
+        hover = "万圣夜活动中，砍树时频繁出现的蝙蝠特效",
+        shelter = {
+            [{"batover"}] = {"fx_pre", "bat_tree_fx"},
+            [{"batover"}] = {"fx_pre_1", "bat_tree_fx"},
+            [{"batover"}] = {"wing01", "bat_tree_fx"},
+            [{"batover"}] = {"puffs1", "bat_tree_fx"},
+            [{"batover"}] = {"puffs2", "bat_tree_fx"},
+            [{"batover"}] = {"bat_dissolve01", "bat_tree_fx"},
+            [{"batover"}] = {"bat_head01", "bat_tree_fx"},
+        },
+        default = true,
+    },
+    {
+        id = "bloodover",
+        prefab = "icon_health",
+        label = "玩家挨打特效",
+        hover = "被怪物击打时的滤镜",
+        shelter = {
+            [{"bloodover", "bg"}] = true,
+        },
+        default = true,
+    },
+    {
+        id = "beefbloodover",
+        prefab = "beefalo",
+        label = "牛牛受伤特效",
+        hover = "牛牛血量很低时的滤镜",
+        shelter = {
+            [{"beefbloodover", "bg"}] = true,
+        },
+        default = true,
+    },
+    {
+        id = "iceover",
+        prefab = "icon_cold",
+        label = "玩家过冷特效",
+        hover = "玩家过冷时的雪花滤镜",
+        shelter = {
+            [{"iceover", "img"}] = true,
+        },
+        default = true,
+    },
+    {
+        id = "fireover",
+        prefab = "fire",
+        label = "玩家燃烧特效",
+        hover = "玩家燃烧时的底部火焰",
+        shelter = {
+            [{"fireover", "anim"}] = {"flames", "fire_over"},
+            [{"fireover", "anim"}] = {"fire_over01", "fire_over"},
+        },
+        default = true,
+    },
+    {
+        id = "heatover",
+        prefab = "icon_heat",
+        label = "玩家过热特效",
+        hover = "玩家过热时的屏幕特效",
+        shelter = {
+            [{"heatover", "img"}] = true,
+        },
+        default = true,
+    },
+    {
+        id = "fumeover",
+        prefab = "spore_moon",
+        label = "孢子云中毒特效",
+        hover = "玩家孢子云中毒时的屏幕特效",
+        shelter = {
+            [{"fumeover", "over", "bg"}] = true,
+        },
+        default = true,
+    },
+    {
+        id = "flareover",
+        prefab = "miniflare",
+        label = "信号弹特效",
+        hover = "信号弹/照明弹/裂隙达到最大阶段的屏幕特效",
+        shelter = {
+            [{"flareover", "bg"}] = true,
+        },
+        default = true,
+    },
+    {
+        id = "lunarburnover",
+        prefab = "alterguardian_phase4_lunarrift",
+        label = "天体后裔滤镜",
+        hover = "决战天体后裔时的白光滤镜",
+        shelter = {
+            [{"lunarburnover", "anim"}] = {"fx_beam_end", "wagboss_beam_over"},
+            [{"lunarburnover", "anim"}] = {"fx_parts", "wagboss_beam_over"},
+            [{"lunarburnover", "anim"}] = {"gradient2", "wagboss_beam_over"},
+            [{"lunarburnover", "anim"}] = {"fire_over01", "wagboss_beam_over"},
+            [{"lunarburnover", "anim"}] = {"fx_beam_thick", "wagboss_beam_over"},
+        },
+        default = true,
+    },
+    {
+        id = "InkOver",
+        prefab = "squid",
+        label = "墨汁特效",
+        hover = "鱿鱼给玩家吐出墨水的遮挡特效",
+        shelter = {
+            [{"InkOver", "InkOver"}] = {"streak_01", "ink_over"},
+            [{"InkOver", "InkOver2"}] = {"streak_01", "ink_over"},
+            [{"InkOver", "InkOver"}] = {"streak_02", "ink_over"},
+            [{"InkOver", "InkOver2"}] = {"streak_02", "ink_over"},
+            [{"InkOver", "InkOver"}] = {"splat_01", "ink_over"},
+            [{"InkOver", "InkOver2"}] = {"splat_01", "ink_over"},
+            [{"InkOver", "InkOver"}] = {"splat_02", "ink_over"},
+            [{"InkOver", "InkOver2"}] = {"splat_02", "ink_over"},
+            [{"InkOver", "InkOver"}] = {"splat_03", "ink_over"},
+            [{"InkOver", "InkOver2"}] = {"splat_03", "ink_over"},
+            [{"InkOver", "InkOver"}] = {"splat_04", "ink_over"},
+            [{"InkOver", "InkOver2"}] = {"splat_04", "ink_over"},
+        },
+        default = true,
+    },
+    {
+        id = "wx78_backupbody",
+        prefab = "wx78_backupbody",
+        label = "wx78备份底盘特效",
+        hover = "wx78使用备份底盘交换身体时的特效",
+        shelter = {
+            [{"wxpowerover", "fx"}] = {"font_numbers", "wx_overlay"},
+            [{"wxpowerover", "fx"}] = {"fx_elec1", "wx_overlay"},
+            [{"wxpowerover", "fx"}] = {"vig", "wx_overlay"},
+            [{"wxpowerover", "fx"}] = {"text", "wx_overlay"},
+            [{"wxpowerover", "fx"}] = {"wx_fx_parts", "wx_overlay"},
+            [{"wxpowerover", "fx"}] = {"ball_loop", "wx_overlay"},
+            [{"wxpowerover", "fx"}] = {"wx_fx_parts_elec", "wx_overlay"},
+        },
+        default = not isHuxi,
+    },
+    {
+        id = "dronezapover",
+        prefab = "wx78_drone_zap_remote",
+        label = "wx78无人机特效",
+        hover = "wx78使用电刑机控制器的特效",
+        shelter = {
+            [{"dronezapover"}] = {"zap_detail", "wx78_drone_zap_overlay"},
+            [{"dronezapover"}] = {"indicator", "wx78_drone_zap_overlay"},
+            
+        },
+        default = not isHuxi,
+    },
+}
